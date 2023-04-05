@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-5 text-center bg-image" style="
+      background-image: url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+      height: 550px;
+    ">
+    <div class="mask" style="background-color: rgba(102,102,102,0.7);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-5" style="justify-content: center">Discover the Juiciest Fruits in Town at Our Shop!
+                    you're guaranteed to find a range of fruits that are both delicious and nutritious.</h1>
+                <h2 class="mb-5">Eat Healthy, Live Happy </h2>
+                <h3>Shop for Quality</h3>
+                <a class="btn btn-outline-light btn-lg center" href="#!" role="button"
+                   style="background-color: #0ed600;">SHOP NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>Products</h1>
+<div class="row" style="justify-content: center">
+    {% for product in products %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="card img">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.price }}</p>
+                <a href="#" class="btn btn-primary" style="background-color: #0ed600;">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
